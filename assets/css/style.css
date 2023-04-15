@@ -17,6 +17,8 @@
   border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
+  height: 80%;
+  width: 80%;
 }
 
 .casella{
@@ -27,7 +29,6 @@
   font-size: 25px;
   cursor: pointer;
   width: calc( 100% / 10);
-  padding: 10%;
 }
 
 .green{

@@ -17,5 +17,16 @@ function creaElemento(tag, classe, testo){
   return element
 }
 
-console.log(creaElemento("div", "casella", "ciao"));
+//console.log(creaElemento("div", "casella", "ciao"));
+let griglia = document.querySelector(".griglia")
 
+for (let i = 1; i <= 100; i++) {
+  const casella = creaElemento("div", "casella", i)
+  griglia.append(casella)
+
+  casella.addEventListener("click", function(){
+    this.classList.toggle("green")
+  })
+
+
+}
