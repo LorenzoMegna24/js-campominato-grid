@@ -14,11 +14,11 @@
 }
 
 .griglia{
-  border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
   height: 80%;
   width: 80%;
+  border: 1px solid black;
 }
 
 .casella{
@@ -28,9 +28,20 @@
   justify-content: center;
   font-size: 25px;
   cursor: pointer;
-  width: calc( 100% / 10);
 }
 
 .green{
   background-color: lightgreen;
+}
+
+.facile{
+  width: calc( 100% / 10);
+}
+
+.media{
+  width: calc( 100% / 9);
+}
+
+.difficile{
+  width: calc( 100% / 7);
 }

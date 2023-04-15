@@ -10,23 +10,55 @@ Aggiungere una select accanto al bottone di generazione, che fornisca una scelta
 - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
  */
 
-function creaElemento(tag, classe, testo){
+function creaElemento(tag, classe, testo, difficult){
   let element = document.createElement(tag)
   element.className = classe
   element.innerText = testo
+  element.classList.add(difficult)
   return element
 }
 
 //console.log(creaElemento("div", "casella", "ciao"));
 let griglia = document.querySelector(".griglia")
-
-for (let i = 1; i <= 100; i++) {
-  const casella = creaElemento("div", "casella", i)
-  griglia.append(casella)
-
-  casella.addEventListener("click", function(){
-    this.classList.toggle("green")
-  })
+let start = document.getElementById("start")
+let difficolta = document.getElementById("difficoltà")
+console.log(difficolta);
 
 
+start.addEventListener("click", function(){
+
+  setDifficolta()
+  
+})
+
+function setDifficolta(){
+  let valoreDifficolta = difficolta.value;
+  if (valoreDifficolta == 1) {
+    for (let i = 1; i <= 100; i++) {
+      const casella = creaElemento("div", "casella", i, "facile")
+      griglia.append(casella)
+    
+      casella.addEventListener("click", function(){
+        this.classList.toggle("green")
+      })
+    }
+  }else if(valoreDifficolta == 2){
+    for (let i = 1; i <= 81; i++) {
+      const casella = creaElemento("div", "casella", i, "media")
+      griglia.append(casella)
+    
+      casella.addEventListener("click", function(){
+        this.classList.toggle("green")
+      })
+    }
+  }else {
+    for (let i = 1; i <= 49; i++) {
+      const casella = creaElemento("div", "casella", i, "difficile")
+      griglia.append(casella)
+    
+      casella.addEventListener("click", function(){
+        this.classList.toggle("green")
+      })
+    }
+  }
 }
