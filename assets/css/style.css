@@ -29,3 +29,7 @@
   width: calc( 100% / 10);
   padding: 10%;
 }
+
+.green{
+  background-color: lightgreen;
+}
